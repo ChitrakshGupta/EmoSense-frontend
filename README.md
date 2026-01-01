@@ -1,16 +1,41 @@
-# React + Vite
+# EmoSense – Complete Technical Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Introduction
 
-Currently, two official plugins are available:
+**EmoSense** is a cloud-native sentiment analysis platform designed for accurate, low-latency emotion classification of textual data. The system leverages an open-source transformer-based NLP model and follows a **microservices-based, containerized architecture**. Each core component—model inference, backend orchestration, and authentication—is deployed as an independent container on **Microsoft Azure Container Instances**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 2. Objectives
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Perform real-time binary sentiment analysis (Positive / Negative)
+- Ensure modular, scalable, and maintainable system design
+- Enforce secure access via third-party authentication
+- Optimize inference performance using a lightweight transformer model
+- Enable cloud-native deployment with minimal operational overhead
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 3. Technology Stack
+
+### 3.1 Core Technologies
+- **Programming Language:** Python
+- **NLP Framework:** Hugging Face Transformers
+- **Model Serving:** REST APIs
+- **Containerization:** Docker
+- **Cloud Platform:** Microsoft Azure Container Instances
+
+### 3.2 Supporting Components
+- HTTP-based inter-service communication
+- Token-based authentication (third-party identity provider)
+- Environment variable–based configuration and secrets management
+
+---
+
+## 4. Sentiment Analysis Model
+
+### 4.1 Model Configuration
+
+```python
+model_name = "distilbert-base-uncased-finetuned-sst-2-english"
+classifier = pipeline("sentiment-analysis", model=model_name)
